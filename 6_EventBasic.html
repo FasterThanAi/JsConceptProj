@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        .rectangle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px auto 10px;
+            border: 2px solid black;
+            width: 320px;
+            height: 480px;
+        }
+        #btn{
+            padding: 16px 8px;
+            font-size: 16px;
+           
+        }
+        .addTransition{
+            border-radius: 50%;
+        }
+        .addTransition1{
+            border-radius: 50%;
+            transform: translate(-30rem, 0);
+            background-color: #f5ee62;
+        }
+        .addTransition2{
+            border-radius: 50%;
+            background-color: #f5ee62;
+            transform: translate( 30rem 0);
+        }
+        .addTransition3{
+            border-radius: 0%;
+            transform: translate(0rem 0);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="rectangle"></div>
+    <button id="btn">Click me </button>
+    <script>
+        let mybtn=document.getElementById('btn')
+        let myrec=document.querySelector('.rectangle')
+        handlemouseEvent=()=>{
+            console.log('click');
+            myrec.style.backgroundColor="#f5ee62"
+        }
+        // mybtn.addEventListener('click',fun4)
+        const fun2=()=>{
+            myrec.classList.add("addTransition")
+        }
+        const fun3=()=>{
+            myrec.classList.add("addTransition1")
+        }
+        const fun4=()=>{
+            myrec.classList.add("addTransition2")
+        }
+        fun5=()=>{
+            myrec.classList.add("addTransition3")
+        }
+        // fun3=()=>{
+        //     myrec.classList.add("addTransation1")
+        // }
+        // mybtn.addEventListener('click',handlemouseEvent)
+        mybtn.addEventListener('dblclick',fun2)
+        myrec.addEventListener('mouseover',fun3)
+        myrec.addEventListener('mouseout',fun4)
+        myrec.addEventListener('mousedown',fun5)
+        myrec.addEventListener('mouseup',fun6)
+        // myrec.addEventListener('mousehover',fun3)
+        // myrec.addEventListener('mouseout',fun4)
+        // myrec.addEventListener('mousedown',fun5)
+        // myrec.addEventListener('mouseup',fun6)
+    </script>
+</body>
+</html>

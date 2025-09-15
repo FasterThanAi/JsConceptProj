@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="type somthing...." type="text" id="myinput" name="username"/>
+    <div class="output">
+        <p class="inputValue">Input Value: </p>
+        <p class="inputName">Input Name</p>
+        <p class="inputType">Input Type </p>
+        <p class="eventType">Event Type</p>
+    </div>
+    <script>
+        let myin=document.getElementById('myinput')
+        let funInput=(InputEvent)=>{
+            console.log(InputEvent);
+            console.log(InputEvent.target);
+            
+            document.querySelector('.inputValue').textContent=`Input Value: ${InputEvent.target.value}`
+            document.querySelector('.inputName').textContent=`Input Name: ${InputEvent.target.name}`
+            document.querySelector('.inputType').textContent=`Input Type: ${InputEvent.inputType}`
+            document.querySelector('.eventType').textContent=`Event Type: ${InputEvent.type}`
+        }
+        myin.addEventListener('input',funInput)// 'input' event hai same as 'click'
+
+    </script>
+</body>
+</html>
